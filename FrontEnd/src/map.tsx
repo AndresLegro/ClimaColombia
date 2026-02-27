@@ -58,7 +58,7 @@ const ibagueLocations: LocationPoint[] = [
 ];
 
 const Map = () => {
-  const [coords, setCoords] = useState<[number, number] | null>(null);
+  const [_coords, setCoords] = useState<[number, number] | null>(null);
   const [zoom, setZoom] = useState(12.5);
   const [responses, setResponses] = useState<CurrentWeather[]>([]);
   const [forecast, setForecast] = useState<ForecastWithLocation[]>([]);

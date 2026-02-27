@@ -1,4 +1,4 @@
-export const API_BASE_URL = "http://localhost:3000/api/weather";
+export const API_BASE_URL = "https://climacolombia.onrender.com/api/weather/";
 
 export const ENDPOINTS = {
   currentWeather: "/current",
