@@ -148,8 +148,8 @@ const Map = () => {
     );
   }
   return (
-    <div className="relative w-full h-screen">
-      <MapContainer className="map h-full w-full"
+    <div className="relative w-screen h-screen">
+      <MapContainer className="map h-screen w-screen"
         center={[4.43, -75.20]} // Ibague
         zoom={zoom}
         minZoom={12}
@@ -211,7 +211,7 @@ const Map = () => {
       </MapContainer>
 
       {selectedWeather && (
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-1000 w-full max-w-md px-4">
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-1000 w-screen max-w-md px-4">
 
           <div className="relative">
 

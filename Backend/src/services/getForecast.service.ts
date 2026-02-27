@@ -1,7 +1,6 @@
 import { weatherCache } from "../cache";
 import { WeatherApiValidationError } from "../errors/WeatherApiValidationError";
 import { WeatherDtoSchema, WeatherResponseDTO, HourDTO} from "../types/weather.dto.schema";
-//import { WeatherResponseDTO, LocationDTO, CurrentDTO, HourDTO, ConditionDTO } from "../types/weatherAPi.types";
 
 export const getApiResponse = async (lat: number, lon: number) => {
 
@@ -17,8 +16,11 @@ export const getApiResponse = async (lat: number, lon: number) => {
 
     const fecthPromise = (async () => {
 
-        const API_KEY = '74532f821f1c478785b142641261302';
-        const url = new URL('https://api.weatherapi.com/v1/forecast.json');
+        const API_KEY = process.env.API_KEY;
+        const API_URL = process.env.API_URL;
+
+        if(!API_KEY || !API_URL || API_KEY === "" || API_URL === "") throw new Error('Error al consultar WeatherAPI');
+        const url = new URL(API_URL);
 
         try {
             url.searchParams.append('key', API_KEY);
